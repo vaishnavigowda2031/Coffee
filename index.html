@@ -88,10 +88,11 @@
     display:flex;align-items:center;justify-content:space-between;
     padding:12px 24px;max-width:var(--max);margin:0 auto;
   }
-  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
-  .brand img{width:40px;height:40px;border-radius:50%;object-fit:cover;}
-  .brand-text{font-family:'Playfair Display',serif;font-weight:700;font-size:16px;line-height:1.1;color:var(--ink);}
+  .brand{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-decoration:none;text-align:center;}
+  .brand img{width:36px;height:36px;border-radius:50%;object-fit:cover;}
+  .brand-text{font-family:'Playfair Display',serif;font-weight:700;font-size:13px;line-height:1.05;color:var(--ink);animation:brandTitleSlide .7s ease both;}
   .brand-text small{display:block;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;color:var(--orange);text-transform:uppercase;margin-top:2px;}
+  @keyframes brandTitleSlide{from{opacity:0;transform:translateY(-8px);}to{opacity:1;transform:translateY(0);}}
   nav.links{display:flex;gap:28px;font-size:14px;}
   nav.links a{text-decoration:none;color:var(--steel);transition:color .2s;}
   nav.links a:hover{color:var(--orange);}
@@ -332,6 +333,9 @@
     border-radius:2px;
   }
   .section-head p{color:var(--steel);font-size:16px;line-height:1.6;margin-top:14px;}
+  #visit .section-head{margin-bottom:34px;}
+  #visit .section-head h2{font-size:clamp(28px,3.2vw,38px);}
+  #visit .section-head p{font-size:15px;max-width:620px;}
 
   /* ---------- about ---------- */
   .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;}
@@ -401,9 +405,9 @@
     background:linear-gradient(135deg, rgba(252,248,242,.95), rgba(245,239,228,.8));
     border:3px solid var(--gold);
     border-radius:24px;
-    padding:48px;
+    padding:34px 26px;
     margin:40px auto;
-    max-width:520px;
+    max-width:430px;
     text-align:center;
     box-shadow:0 16px 48px rgba(196,139,18,.15), inset 0 0 30px rgba(217,107,39,.08);
     backdrop-filter:blur(10px);
@@ -429,7 +433,7 @@
     letter-spacing:-.02em;
   }
   .insta-qr{
-    width:220px;height:220px;margin:0 auto 28px;
+    width:150px;height:150px;margin:0 auto 20px;
     border:8px solid var(--gold);
     border-radius:16px;
     box-shadow:0 12px 36px rgba(44,34,28,.2), inset 0 0 20px rgba(217,107,39,.1);
@@ -442,7 +446,7 @@
     box-shadow:0 16px 44px rgba(44,34,28,.25);
   }
   .insta-id{
-    font-size:22px;color:var(--orange);font-weight:900;
+    font-size:18px;color:var(--orange);font-weight:900;
     font-family:'Playfair Display',serif;
     letter-spacing:.01em;
     margin-bottom:12px;
@@ -450,7 +454,7 @@
   }
   .insta-handle{
     font-family:'Work Sans',sans-serif;
-    font-size:15px;
+    font-size:13px;
     color:var(--steel);
     letter-spacing:.03em;
     position:relative;z-index:2;
@@ -670,14 +674,17 @@
   @media (max-width:600px){
     body{font-size:13px;}
     .nav-inner{padding:10px 12px;}
-    .brand-text{font-size:13px;}
-    .brand-text small{font-size:8px;}
+    .brand-text{font-size:11px;}
+    .brand-text small{font-size:7px;}
     .hero h1{font-size:clamp(30px,9vw,42px);}
     .hero-tagline{font-size:13px;line-height:1.5;max-width:94%;}
     .hero-meta{font-size:10px;letter-spacing:.04em;}
     .btn{font-size:12px;padding:11px 20px;}
     .section-head h2{font-size:26px;}
     .section-head p{font-size:13px;}
+    #visit .section-head{margin-bottom:20px;}
+    #visit .section-head h2{font-size:22px;line-height:1.2;}
+    #visit .section-head p{font-size:12px;line-height:1.5;}
     .eyebrow{font-size:9px;}
     .about-copy p{font-size:13px;line-height:1.65;}
     .about-copy .lede{font-size:21px;}
@@ -704,15 +711,15 @@
     .review-stars{font-size:16px;letter-spacing:3px;}
     .review-text{font-size:13px;line-height:1.55;}
     .review-author{font-size:14px;}
-    .insta-section{padding:26px 16px;border-radius:18px;}
-    .insta-section h3{font-size:24px;}
-    .insta-id{font-size:18px;}
+    .insta-section{padding:18px 12px;border-radius:16px;max-width:300px;}
+    .insta-section h3{font-size:20px;}
+    .insta-id{font-size:15px;}
     .insta-handle{font-size:13px;}
-    .insta-qr{width:170px;height:170px;}
+    .insta-qr{width:118px;height:118px;border-width:5px;}
     .contact-info{gap:12px;font-size:12px;}
-    .whatsapp-section{padding:26px 16px;border-radius:18px;}
-    .whatsapp-section h3{font-size:24px;}
-    .whatsapp-btn{font-size:13px;padding:12px 20px;}
+    .whatsapp-section{padding:20px 12px;border-radius:16px;max-width:320px;}
+    .whatsapp-section h3{font-size:20px;}
+    .whatsapp-btn{font-size:12px;padding:10px 16px;}
     .byline{font-size:12px;}
   }
 
@@ -794,20 +801,20 @@
     background:linear-gradient(135deg, rgba(217,107,39,.15), rgba(196,139,18,.1));
     border:3px solid var(--gold);
     border-radius:16px;
-    padding:64px 32px;
+    padding:40px 24px;
     text-decoration:none;
     cursor:pointer;
     transition:all .3s ease;
-    gap:20px;
+    gap:14px;
   }
   .map-link:hover{
     background:linear-gradient(135deg, rgba(217,107,39,.25), rgba(196,139,18,.2));
     transform:translateY(-4px);
     box-shadow:0 20px 50px rgba(217,107,39,.2);
   }
-  .map-link-icon{font-size:48px;}
-  .map-link-text h3{margin:0;color:var(--ink);font-size:28px;font-weight:900;}
-  .map-link-text p{margin:8px 0 0;color:var(--steel);font-size:16px;}
+  .map-link-icon{font-size:38px;}
+  .map-link-text h3{margin:0;color:var(--ink);font-size:22px;font-weight:900;}
+  .map-link-text p{margin:6px 0 0;color:var(--steel);font-size:14px;}
 
   /* Reviews Section */
   .reviews-section{
@@ -867,10 +874,10 @@
   .whatsapp-section{
     background:linear-gradient(135deg, rgba(37,211,102,.1), rgba(196,139,18,.08));
     border:3px solid #25d366;
-    border-radius:24px;
-    padding:48px;
+    border-radius:20px;
+    padding:30px 20px;
     margin:40px auto;
-    max-width:520px;
+    max-width:430px;
     text-align:center;
     box-shadow:0 16px 48px rgba(37,211,102,.15);
     backdrop-filter:blur(10px);
@@ -879,7 +886,7 @@
   }
   .whatsapp-section h3{
     font-family:'Playfair Display',serif;
-    font-size:32px;
+    font-size:24px;
     color:var(--ink);
     margin:0 0 16px;
     font-weight:900;
@@ -890,11 +897,11 @@
     gap:12px;
     background:#25d366;
     color:white;
-    padding:16px 32px;
+    padding:12px 24px;
     border-radius:100px;
     text-decoration:none;
     font-weight:700;
-    font-size:16px;
+    font-size:14px;
     transition:all .3s ease;
     margin-top:16px;
     box-shadow:0 8px 24px rgba(37,211,102,.3);
@@ -904,7 +911,7 @@
     transform:translateY(-3px);
     box-shadow:0 12px 32px rgba(37,211,102,.4);
   }
-  .whatsapp-icon{font-size:24px;}
+  .whatsapp-icon{font-size:20px;}
 
   @media (max-width:900px){
     .reviews-grid{grid-template-columns:repeat(2,1fr);}
@@ -912,7 +919,38 @@
   @media (max-width:600px){
     .reviews-grid{min-height:230px;}
     .reviews-grid{grid-template-columns:1fr;}
-    .map-link{flex-direction:column;padding:40px 24px;}
+    .map-link{flex-direction:column;padding:24px 14px;gap:8px;}
+    .map-link-icon{font-size:32px;}
+    .map-link-text h3{font-size:18px;}
+    .map-link-text p{font-size:12px;margin-top:4px;}
+  }
+
+  @media (max-width:480px){
+    #visit{padding:34px 0 42px !important;}
+    #visit .section-head{margin-bottom:14px;}
+    #visit .section-head h2{font-size:19px;line-height:1.18;}
+    #visit .section-head p{font-size:11px;line-height:1.45;margin-top:8px;}
+    #visit .wrap{padding-left:14px;padding-right:14px;}
+    .map-link{padding:18px 10px;gap:6px;border-width:2px;border-radius:12px;}
+    .map-link-icon{font-size:26px;}
+    .map-link-text h3{font-size:16px;}
+    .map-link-text p{font-size:11px;line-height:1.35;}
+  }
+
+  @media (max-width:600px){
+    #open-hours{padding:36px 16px !important;}
+    #open-hours .hours-text{font-size:15px !important;letter-spacing:1px !important;gap:6px !important;}
+    #mid-quote{padding:34px 16px !important;}
+    #mid-quote .kannada-quote{margin:0 auto;padding:12px 14px;}
+    #visit{padding-top:42px !important;}
+  }
+
+  @media (max-width:480px){
+    #open-hours{padding:26px 12px !important;}
+    #open-hours .hours-text{font-size:13px !important;letter-spacing:.6px !important;gap:5px !important;}
+    #mid-quote{padding:22px 12px !important;}
+    #mid-quote .kannada-quote{font-size:12px;padding:10px 10px;line-height:1.45;}
+    #visit{padding-top:30px !important;}
   }
 </style>
 </head>
@@ -920,7 +958,7 @@
   <header class="nav">
     <div class="nav-inner">
       <a class="brand" href="#">
-        <img src="logo.jpeg" alt="Namma KA18 Coffee Adda logo" style="width:45px;height:45px;border-radius:50%;object-fit:cover;" onerror="this.style.display='none'"/>
+        <img src="logo.jpeg" alt="Namma KA18 Coffee Adda logo" style="width:36px;height:36px;border-radius:50%;object-fit:cover;" onerror="this.style.display='none'"/>
         <span class="brand-text">Namma KA18 Coffee Adda<small>Est. 1991</small></span>
       </a>
       <nav class="links">
@@ -1073,12 +1111,12 @@
     </section>
 
     <!-- Open Hours Section - Centered -->
-    <section style="padding: 60px 24px; text-align: center;">
-      <div style="font-size:18px;color:var(--gold);font-family:'Playfair Display',serif;font-weight:700;letter-spacing:2px;display:flex;align-items:center;justify-content:center;gap:8px;">
+    <section id="open-hours" style="padding: 60px 24px; text-align: center;">
+      <div class="hours-text" style="font-size:18px;color:var(--gold);font-family:'Playfair Display',serif;font-weight:700;letter-spacing:2px;display:flex;align-items:center;justify-content:center;gap:8px;">
         <span>🕰️</span> Open Hours: 6:30 AM - 9:00 PM
       </div>
     </section>
-    <section style="padding:60px 24px;text-align:center;background:var(--roast);">
+    <section id="mid-quote" style="padding:60px 24px;text-align:center;background:var(--roast);">
       <div class="wrap">
         <div class="kannada-quote">
           ಬರಿ ಕಾಫಿಯಷ್ಟೇ ಅಲ್ಲ, ಮನಸುಗಳನ್ನು ಬೆಸೆಯುವ ಸವಿ ನಿಲ್ದಾಣ.
@@ -1087,7 +1125,7 @@
       </div>
     </section>
 
-    <section id="visit" class="wrap" style="padding:90px 0 110px;">
+    <section id="visit" class="wrap" style="padding:56px 0 68px;">
       <div class="section-head">
         <div class="eyebrow">Visit</div>
         <h2>Drop by for a cup and a warm welcome.</h2>
