@@ -823,6 +823,42 @@
     .reviews-grid{grid-template-columns:1fr;}
     .map-link{flex-direction:column;padding:40px 24px;}
   }
+  /* ==========================================================================
+   MOBILE RESPONSIVENESS FIX
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Forces the 4-column item layout to stack cleanly in 1 column */
+  .snacks-photo-showcase, 
+  .snacks-showcase-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 0 20px !important;
+  }
+
+  /* Ensures individual food cards span the full viewport width */
+  .food-photo-card, 
+  .snack-card {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Scales down photo heights so they look proportional on small displays */
+  .image-wrapper {
+    height: 220px !important;
+  }
+
+  /* Optimizes text sizes so headers do not clip or wrap awkwardly */
+  .card-caption h3, 
+  .snack-info h3 {
+    font-size: 20px !important;
+  }
+
+  .card-caption p, 
+  .snack-info p {
+    font-size: 14px !important;
+  }
+}
+
 </style>
 </head>
 <body>
