@@ -1,1117 +1,350 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Namma KA18 Coffee Adda — Chikkamagaluru Filter Coffee Since 1991</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Updated with ultra-beautiful elegant fonts: Playfair Display & Alex Brush -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Alex+Brush&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Rozha+One&family=Yatra+One&family=Bebas+Neue&family=Noto+Sans+Kannada:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    /* Light Neutral & Vintage Color Palette Updates */
-    --ink:#2c221c;
-    --ink-2:#3d3027;
-    --cream:#fcf8f2; /* Beautiful light neutral primary background */
-    --cream-dim:#eadecc;
-    --orange:#d96b27;
-    --orange-2:#b55319;
-    --gold:#c48b12;
-    --roast:#fdfbf7;
-    --roast-dim:#f5efe4;
-    --steel:#7c7267;
-    --max:1120px;
-    /* Vintage coffee pouring aesthetic */
-    --hero-img: url('https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80');
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--cream);
-    background-image: 
-      radial-gradient(circle at 20% 50%, rgba(217,107,39,.08) 0%, transparent 50%), 
-      radial-gradient(circle at 80% 80%, rgba(217,107,39,.06) 0%, transparent 50%),
-      radial-gradient(ellipse at 15% 20%, rgba(139,90,43,.04) 0%, transparent 40%),
-      radial-gradient(ellipse at 85% 90%, rgba(139,90,43,.04) 0%, transparent 40%);
-    color:var(--ink);
-    font-family:'Work Sans', sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
-  img{max-width:100%;display:block;}
-  a{color:inherit;}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
-  h1,h2,h3{font-family:'Playfair Display', serif; margin:0;}
-  .eyebrow{
-    font-family:'IBM Plex Mono', monospace;
-    letter-spacing:.16em;
-    text-transform:uppercase;
-    font-size:11px;
-    color:var(--gold);
-    font-weight:700;
-    position:relative;
-    padding-bottom:8px;
-  }
-  .eyebrow::after{
-    content:'';
-    position:absolute;
-    bottom:0;left:0;
-    width:24px;height:2px;
-    background:var(--gold);
-    border-radius:1px;
-  }
-  /* Beautiful custom cursive font variant */
-  .beautiful-script {
-    font-family: 'Alex Brush', cursive;
-    font-size: clamp(38px, 5vw, 55px);
-    color: var(--orange);
-    display: block;
-    margin-top: 10px;
-    text-shadow: none;
-  }
-
-  /* ---------- focus ---------- */
-  a:focus-visible, button:focus-visible{
-    outline:2px solid var(--orange);
-    outline-offset:3px;
-  }
-
-  /* ---------- nav ---------- */
-  header.nav{
-    position:sticky;top:0;z-index:50;
-    background:rgba(252,248,242,.92); /* Tinted glassmorphism to match light neutral */
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid rgba(44,34,28,.08);
-  }
-  .nav-inner{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:12px 24px;max-width:var(--max);margin:0 auto;
-  }
-  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
-  .brand img{width:40px;height:40px;border-radius:50%;object-fit:cover;}
-  .brand-text{font-family:'Playfair Display',serif;font-weight:700;font-size:16px;line-height:1.1;color:var(--ink);}
-  .brand-text small{display:block;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;color:var(--orange);text-transform:uppercase;margin-top:2px;}
-  nav.links{display:flex;gap:28px;font-size:14px;}
-  nav.links a{text-decoration:none;color:var(--steel);transition:color .2s;}
-  nav.links a:hover{color:var(--orange);}
-  .nav-cta{
-    background:var(--orange);color:var(--cream);
-    padding:9px 16px;border-radius:100px;font-weight:600;font-size:13px;
-    text-decoration:none;white-space:nowrap;
-  }
-  .menu-toggle{display:none;background:none;border:none;color:var(--ink);font-size:24px;cursor:pointer;}
-
-  @media (max-width:820px){
-    nav.links{display:none;}
-    .menu-toggle{display:block;}
-    .nav-cta{display:none;}
-  }
-
-  /* ---------- hero ---------- */
-  .hero{
-    position:relative;
-    min-height:92vh;
-    display:flex;
-    align-items:center;
-    overflow:hidden;
-  }
-  .hero-bg{
-    position:absolute;inset:0;
-    background-image:var(--hero-img);
-    background-size:cover;
-    background-position:center;
-    opacity: 0.22;
-    filter: sepia(35%) contrast(100%) saturate(0.8);
-  }
-  .hero-tint{
-    position:absolute;inset:0;
-    background:
-      radial-gradient(circle at 50% 50%, rgba(252,248,242,0.4) 0%, rgba(252,248,242,0.95) 100%);
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Namma KA18 Coffee Adda</title>
   
-  /* MOVING TITLE ANIMATION LAYER */
-  @keyframes gentleFloat {
-    0% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-10px) rotate(0.5deg); }
-    100% { transform: translateY(0px) rotate(0deg); }
-  }
+  <!-- Premium Fonts for Elegant Typography -->
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Rozha+One&family=Yatra+One&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 
-  .hero-content{
-    position:relative;z-index:2;width:100%;padding:60px 24px 90px;text-align:center;
-    animation: gentleFloat 5s ease-in-out infinite;
-    display:flex;flex-direction:column;align-items:center;
-  }
-  
-  .hero-logo{
-    width:220px;height:220px;border-radius:50%;margin:0 auto 0;
-    border:8px solid var(--gold);
-    box-shadow:0 0 0 4px var(--orange), 0 20px 60px rgba(44,34,28,.25), inset 0 0 30px rgba(0,0,0,.1);
-    object-fit:cover;
-    position:relative;z-index:3;
-  }
-  .hero-kannada{font-size:18px;color:var(--orange);margin-bottom:10px;letter-spacing:.02em;font-weight: 500;}
-  .hero h1{
-    font-size:clamp(42px,7vw,78px);
-    font-weight:900;
-    line-height:1.05;
-    color:var(--ink);
-    letter-spacing:-0.02em;
-  }
-  .hero h1 em{
-    font-style:normal;
-    color:var(--orange);
-  }
-  .hero-tagline{
-    font-size:18px;
-    color:var(--steel);
-    margin-top:20px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
-  }
-  .hero-meta{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:13px;
-    letter-spacing:.06em;
-    color:var(--steel);
-    margin-top:24px;
-    text-transform:uppercase;
-  }
-  .hero-meta strong{color:var(--orange);font-weight:600;}
-  .hero-btns{display:flex;gap:16px;justify-content:center;margin-top:38px;flex-wrap:wrap;}
-  .btn{
-    display:inline-flex;align-items:center;gap:8px;
-    padding:15px 32px;border-radius:100px;
-    text-decoration:none;font-weight:700;font-size:15px;
-    transition:transform .3s ease, box-shadow .3s ease, background .3s ease;
-    letter-spacing:.02em;
-  }
-  .btn:hover{transform:translateY(-3px);}
-  .btn-primary{
-    background:linear-gradient(135deg, var(--orange), var(--orange-2));
-    color:var(--cream);
-    box-shadow:0 12px 32px rgba(217,107,39,.3);
-  }
-  .btn-primary:hover{
-    box-shadow:0 16px 40px rgba(217,107,39,.4);
-  }
-  .btn-ghost{
-    border:2px solid var(--gold);
-    color:var(--ink);
-    background:rgba(196,139,18,.05);
-  }
-  .btn-ghost:hover{
-    border-color:var(--orange);
-    background:rgba(217,107,39,.1);
-    color:var(--orange);
-  }
+  <style>
+    /* ==========================================================================
+       1. GLOBAL THEME BASE & TYPOGRAPHY
+       ========================================================================== */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #fdfaf6; /* Clean warm cream page backdrop */
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  .scroll-cue{
-    position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
-    z-index:2;color:var(--steel);font-size:11px;
-    font-family:'IBM Plex Mono',monospace;letter-spacing:.15em;text-transform:uppercase;
-    display:flex;flex-direction:column;align-items:center;gap:8px;
-  }
-  .scroll-cue .line{width:1px;height:34px;background:linear-gradient(var(--orange),transparent);animation:pulse 2s ease-in-out infinite;}
-  @keyframes pulse{0%,100%{opacity:.3;}50%{opacity:1;}}
+    /* Elegant Brand Header Area */
+    .cafe-brand-header {
+      text-align: center;
+      padding: 40px 20px 20px 20px;
+    }
 
-  /* Centered Brand Styling */
-  .cafe-brand-container {
-    text-align: center;
-    padding: 30px 20px 0 20px;
-    margin-bottom: -92px;
-    background-color: transparent;
-    position: relative;
-    z-index: 10;
-  }
-
-  /* The Beautiful Kannada Font Styling */
-  .kannada-main-title {
-    font-size: 52px;
-    color: var(--orange);
-    letter-spacing: 2px;
-    margin: 0 0 8px 0;
-    text-shadow: none;
-    line-height: 1.2;
-    font-weight: 900;
-  }
-  }
-  
-  .title-namma {
-    font-family: 'Georgia', serif;
-    font-weight: 900;
-    letter-spacing: 2px;
-  }
-  
-  .title-ka18 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-weight: 900;
-    letter-spacing: 3px;
-  }
-  
-  .title-kannada {
-    font-family: 'Georgia', serif;
-    font-weight: 900;
-    letter-spacing: 2px;
-  }
-  
-  /* Subtitle line */
-  .subtitle-kannada {
-    font-family: 'Noto Sans Kannada', sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--gold);
-    margin: 0 0 12px 0;
-    letter-spacing: 1px;
-  }
-
-  /* Small elegant subtitle underneath */
-  .tagline-sub {
-    font-family: 'Georgia', serif;
-    font-style: italic;
-    font-size: 16px;
-    color: #8B5A2B;
-    margin: 0;
-  }
-
-  /* Smooth scaling on mobile screens */
-  @media (max-width: 600px) {
     .kannada-main-title {
-      font-size: 32px;
+      font-family: 'Rozha One', 'Yatra One', serif;
+      font-size: 42px;
+      color: #3d1f11; /* Rich roasted coffee brown tone */
+      margin: 0 0 8px 0;
+      text-shadow: 1px 1px 2px rgba(92, 58, 33, 0.1);
     }
-    .subtitle-kannada {
-      font-size: 14px;
+
+    .tagline-sub {
+      font-family: 'Georgia', serif;
+      font-style: italic;
+      font-size: 15px;
+      color: #8B5A2B;
+      margin: 0;
     }
-  }
 
-  /* ---------- steam divider ---------- */
-  .steam-divider{
-    position:relative;height:90px;
-    display:flex;align-items:center;justify-content:center;
-    background:var(--cream);
-  }
-  .steam-divider svg{width:120px;height:70px;}
-  .steam-path{
-    stroke:var(--orange);
-    stroke-width:2.4;
-    fill:none;
-    stroke-linecap:round;
-    opacity:.6;
-    stroke-dasharray:220;
-    stroke-dashoffset:220;
-    animation:draw 3.2s ease-in-out infinite;
-  }
-  .steam-path.p2{stroke:var(--gold);opacity:.4;animation-delay:.6s;}
-  @keyframes draw{
-    0%{stroke-dashoffset:220;opacity:0;}
-    15%{opacity:.7;}
-    60%{stroke-dashoffset:0;opacity:.5;}
-    100%{stroke-dashoffset:-220;opacity:0;}
-  }
-  @media (prefers-reduced-motion: reduce){
-    .hero-content { animation: none; }
-    .steam-path{animation:none;stroke-dashoffset:0;opacity:.3;}
-    .scroll-cue .line{animation:none;}
-  }
+    /* Main Flex Container Layout */
+    .menu-main-wrapper {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      max-width: 1200px;
+      margin: 20px auto 60px auto;
+      padding: 0 20px;
+      gap: 30px;
+    }
 
-  /* ---------- section shell ---------- */
-  section{padding:100px 0;}
-  .section-head{max-width:640px;margin-bottom:56px;}
-  .section-head h2{
-    font-size:clamp(32px,4vw,46px);color:var(--ink);margin-top:10px;line-height:1.15;font-weight:900;
-    position:relative;
-    padding-bottom:16px;
-  }
-  .section-head h2::after{
-    content:'';
-    position:absolute;
-    bottom:0;left:0;
-    width:60px;height:4px;
-    background:linear-gradient(90deg, var(--gold), var(--orange));
-    border-radius:2px;
-  }
-  .section-head p{color:var(--steel);font-size:16px;line-height:1.6;margin-top:14px;}
+    /* ==========================================================================
+       2. DIGITAL MENU BOARD CONTAINER (MATCHING ORIGINAL DESIGN)
+       ========================================================================== */
+    .menu-content-board {
+      flex: 1.2;
+      background: #3d1f11; /* Uniform dark brown wood fill */
+      border-radius: 20px;
+      padding: 45px 35px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+      color: #ffffff;
+      border: 4px solid #e0a96d;
+    }
 
-  /* ---------- about ---------- */
-  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;}
-  .about-copy p{color:var(--steel);font-size:16.5px;line-height:1.75;margin:0 0 18px;}
-  .about-copy .lede{
-    font-family:'Playfair Display',serif;
-    font-size:26px;color:var(--ink);line-height:1.4;font-weight:800;
-    position:relative;
-    padding-left:20px;
-  }
-  .about-copy .lede::before{
-    content:'';
-    position:absolute;
-    left:0;top:0;
-    width:5px;height:100%;
-    background:linear-gradient(180deg, var(--gold), var(--orange));
-    border-radius:3px;
-  }
-  .about-stats{display:flex;gap:36px;margin-top:34px;flex-wrap:wrap;}
-  .stat{font-family:'IBM Plex Mono',monospace;}
-  .stat b{display:block;font-family:'Playfair Display',serif;font-size:42px;color:var(--orange);font-weight:900;}
-  .stat span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--steel);margin-top:4px;}
-  .about-photo{position:relative;border-radius:14px;overflow:hidden;box-shadow:0 20px 50px rgba(44,34,28,.15), inset 0 0 30px rgba(217,107,39,.1);}
-  .about-photo img{width:100%;height:100%;object-fit:cover;filter:brightness(1.05) contrast(1.1) saturate(0.95);}
-  .about-photo .tag{
-    position:absolute;bottom:0;left:0;right:0;
-    background:linear-gradient(0deg, rgba(44,34,28,.85), transparent);
-    padding:24px;font-family:'Playfair Display',serif;font-size:13px;
-    letter-spacing:.08em;text-transform:uppercase;color:var(--cream-dim);
-    font-weight:700;
-  }
-  
-  /* Vintage footer styling */
-  footer{
-    background:linear-gradient(135deg, rgba(44,34,28,.05), rgba(217,107,39,.03));
-    border-top:1px solid rgba(44,34,28,.1);
-  }
-  .contact-info{
-    display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:16px;font-size:14px;color:var(--steel);
-  }
-  .contact-info a{
-    text-decoration:none;color:var(--orange);font-weight:600;transition:color .2s;
-  }
-  .contact-info a:hover{
-    color:var(--orange-2);
-  }
-  .byline{
-    font-family:'Alex Brush',cursive;
-    font-size:24px;color:var(--orange);
-    font-style:italic;
-  }
+    .board-header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
 
-  /* Hero text layering */
-  .hero-text{
-    position:relative;z-index:1;margin-top:30px;width:100%;
-  }
-  .hero-kannada{
-    font-size:32px;color:var(--orange);margin-bottom:28px;letter-spacing:.04em;font-weight:700;
-    font-family:'Playfair Display',serif;
-    text-shadow:2px 2px 4px rgba(0,0,0,.05);
-    position:relative;
-    padding-bottom:12px;
-  }
-  
-  /* Instagram section styling */
-  .insta-section{
-    background:linear-gradient(135deg, rgba(252,248,242,.95), rgba(245,239,228,.8));
-    border:3px solid var(--gold);
-    border-radius:24px;
-    padding:48px;
-    margin:40px auto;
-    max-width:520px;
-    text-align:center;
-    box-shadow:0 16px 48px rgba(196,139,18,.15), inset 0 0 30px rgba(217,107,39,.08);
-    backdrop-filter:blur(10px);
-    position:relative;
-    overflow:hidden;
-  }
-  .insta-section::before{
-    content:'';
-    position:absolute;
-    top:-50%;right:-50%;
-    width:300px;height:300px;
-    border-radius:50%;
-    background:radial-gradient(circle, rgba(217,107,39,.08) 0%, transparent 70%);
-    pointer-events:none;
-  }
-  .insta-section h3{
-    font-family:'Playfair Display',serif;
-    font-size:32px;
-    color:var(--ink);
-    margin:0 0 24px 0;
-    font-weight:900;
-    position:relative;z-index:2;
-    letter-spacing:-.02em;
-  }
-  .insta-qr{
-    width:220px;height:220px;margin:0 auto 28px;
-    border:8px solid var(--gold);
-    border-radius:16px;
-    box-shadow:0 12px 36px rgba(44,34,28,.2), inset 0 0 20px rgba(217,107,39,.1);
-    object-fit:cover;
-    position:relative;z-index:2;
-    transition:transform .3s ease, box-shadow .3s ease;
-  }
-  .insta-qr:hover{
-    transform:scale(1.02);
-    box-shadow:0 16px 44px rgba(44,34,28,.25);
-  }
-  .insta-id{
-    font-size:22px;color:var(--orange);font-weight:900;
-    font-family:'Playfair Display',serif;
-    letter-spacing:.01em;
-    margin-bottom:12px;
-    position:relative;z-index:2;
-  }
-  .insta-handle{
-    font-family:'Work Sans',sans-serif;
-    font-size:15px;
-    color:var(--steel);
-    letter-spacing:.03em;
-    position:relative;z-index:2;
-  }
-  @media (max-width:880px){.about-grid{grid-template-columns:1fr;gap:40px;}}
+    .brand-badge {
+      background: #e0a96d;
+      color: #3d1f11;
+      display: inline-block;
+      padding: 4px 14px;
+      font-weight: 800;
+      border-radius: 4px;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+    }
 
-  /* ---------- menu ---------- */
-  .menu-section{
-    background:var(--roast-dim);
-    background-image:
-      radial-gradient(circle at 5% 30%, rgba(139,90,43,.04) 0%, transparent 30%),
-      radial-gradient(circle at 95% 70%, rgba(217,107,39,.03) 0%, transparent 35%);
-    position:relative;
-  }
-  .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
-  .menu-card{
-    background:var(--roast);
-    border-radius:16px;padding:32px 28px;
-    border:1px solid rgba(196,139,18,.2);
-    box-shadow: 0 4px 20px rgba(44,34,28,.02), inset 0 0 20px rgba(217,107,39,.03);
-    position:relative;
-    overflow:hidden;
-  }
-  .menu-card::before{
-    content:'';
-    position:absolute;top:-50%;right:-30%;
-    width:200px;height:200px;
-    border-radius:50%;
-    background:radial-gradient(circle, rgba(217,107,39,.08) 0%, transparent 70%);
-    pointer-events:none;
-  }
-  .menu-card .num{font-family:'IBM Plex Mono', monospace; color:var(--gold); font-size:14px; margin-bottom:12px; font-weight: 600;}
+    .board-header h2 {
+      font-size: 30px;
+      margin: 12px 0 6px 0;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
 
-  /* Container Layout Setup */
-  .menu-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 20px;
-    font-family: 'Arial', sans-serif;
-    background: #fdfaf6;
-    border-radius: 24px;
-  }
+    .est-year {
+      font-size: 11px;
+      color: #e0a96d;
+      border-top: 1px solid rgba(224, 169, 109, 0.4);
+      padding-top: 4px;
+      letter-spacing: 2px;
+    }
 
-  /* Replicating the Visual Wooden Menu Image Styling */
-  .menu-content-board {
-    flex: 1;
-    background: #3d1f11; /* Warm dark wood brown background */
-    border-radius: 20px;
-    padding: 40px 30px;
-    box-shadow: 0 12px 35px rgba(0,0,0,0.25);
-    margin: 0 30px;
-    color: #ffffff;
-    border: 4px solid #e0a96d;
-  }
+    .menu-rows-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
 
-  .menu-header {
-    text-align: center;
-    margin-bottom: 35px;
-  }
+    .menu-item-row {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr auto;
+      align-items: center;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed rgba(224, 169, 109, 0.25);
+    }
 
-  .brand-badge {
-    background: #e0a96d;
-    color: #3d1f11;
-    display: inline-block;
-    padding: 4px 14px;
-    font-weight: bold;
-    border-radius: 4px;
-    font-size: 14px;
-    letter-spacing: 1px;
-  }
+    .menu-item-row .eng-name {
+      font-weight: 800;
+      font-size: 16px;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+    }
 
-  .menu-header h2 {
-    font-size: 32px;
-    margin: 10px 0 5px 0;
-    color: #ffffff;
-    letter-spacing: 1px;
-  }
+    .menu-item-row .kn-name {
+      color: #e0a96d;
+      font-size: 16px;
+      font-weight: 600;
+    }
 
-  .est-year {
-    font-size: 11px;
-    color: #e0a96d;
-    border-top: 1px solid #e0a96d;
-    padding-top: 2px;
-    letter-spacing: 2px;
-  }
+    .menu-item-row .price-val {
+      font-weight: 800;
+      font-size: 18px;
+      color: #ffffff;
+      min-width: 35px;
+      text-align: right;
+    }
 
-  /* Rows Matching Image Formatting */
-  .menu-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
+    /* ==========================================================================
+       3. PHOTO SHOWCASE CARD GRID SECTIONS
+       ========================================================================== */
+    .snacks-photo-grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
 
-  .menu-row {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr auto;
-    align-items: center;
-    padding-bottom: 8px;
-    border-bottom: 1px dashed rgba(224, 169, 109, 0.3);
-  }
+    .food-photo-card {
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(61, 31, 17, 0.04);
+      border: 1px solid rgba(227, 213, 202, 0.3);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    }
 
-  .menu-row .eng {
-    font-weight: 800;
-    font-size: 16px;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
+    .food-photo-card:hover {
+      transform: translateY(-5px);
+    }
 
-  .menu-row .kn {
-    color: #e0a96d;
-    font-size: 16px;
-    font-weight: bold;
-  }
+    .image-wrapper {
+      width: 100%;
+      height: 160px;
+      overflow: hidden;
+      background-color: #f7f4f0;
+    }
 
-  .menu-row .price {
-    font-weight: bold;
-    font-size: 18px;
-    color: #ffffff;
-    min-width: 30px;
-    text-align: right;
-  }
+    .image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-  /* Clean Responsive Adaptations */
-  @media (max-width: 820px) {
-    .menu-container { flex-direction: column; padding: 10px; }
-    .menu-content-board { order: 1; width: 100%; margin: 0; padding: 25px 15px; }
-    .menu-row { grid-template-columns: 1fr 1fr auto; font-size: 14px; }
-  }
+    .card-caption {
+      padding: 15px;
+      text-align: left;
+    }
 
-  /* Seamless layout integration matching your warm modern theme */
-  .snacks-photo-showcase {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 0 15px;
-  }
+    .card-caption h3 {
+      color: #3d1f11;
+      font-size: 17px;
+      margin: 0 0 4px 0;
+      font-weight: 700;
+    }
 
-  /* Matching the exact rounded white background look from your design screenshot */
-  .food-photo-card {
-    background: #ffffff;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(43, 24, 16, 0.03);
-    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    display: flex;
-    flex-direction: column;
-    border: 1px solid rgba(227, 213, 202, 0.25);
-  }
+    .card-caption p {
+      color: #7f6a60;
+      font-size: 12.5px;
+      line-height: 1.4;
+      margin: 0;
+    }
 
-  .food-photo-card:hover {
-    transform: translateY(-6px);
-  }
+    /* ==========================================================================
+       4. MOBILE ADAPTIVE ALIGNMENT ENGINE (CRITICAL RESPONSIVE REPAIR)
+       ========================================================================== */
+    @media (max-width: 820px) {
+      /* Force everything into a perfectly loose, stacked vertical column block */
+      .menu-main-wrapper {
+        flex-direction: column;
+        padding: 0 16px;
+        margin-bottom: 40px;
+        gap: 25px;
+      }
 
-  /* Image container cropped with an elegant square aspect ratio */
-  .image-wrapper {
-    width: 100%;
-    height: 180px; 
-    overflow: hidden;
-    background-color: #f7f4f0;
-  }
+      /* Make menu board span completely edge-to-edge smoothly */
+      .menu-content-board {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 30px 20px;
+      }
 
-  .image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-  }
+      .board-header h2 {
+        font-size: 26px;
+      }
 
-  .food-photo-card:hover .image-wrapper img {
-    transform: scale(1.05);
-  }
+      /* Elevate padding space inside rows for better readability on narrow screens */
+      .menu-item-row {
+        grid-template-columns: 1.2fr 1fr auto;
+        padding-bottom: 12px;
+      }
 
-  /* Text area matching the alignment of your text labels */
-  .card-caption {
-    padding: 0;
-    text-align: left;
-    display: none;
-  }
+      .menu-item-row .eng-name,
+      .menu-item-row .kn-name {
+        font-size: 15px;
+      }
 
-  .card-caption h3 {
-    color: #2b1810;
-    font-size: 18px;
-    margin: 0 0 6px 0;
-    font-weight: 700;
-  }
+      /* Grid forces single-card stacks sequentially down the phone view */
+      .snacks-photo-grid {
+        width: 100%;
+        grid-template-columns: 1fr; /* Stacks items continuously one under the other */
+        gap: 20px;
+      }
 
-  .card-caption p {
-    color: #7f6a60;
-    font-size: 13px;
-    line-height: 1.4;
-    margin: 0;
-  }
+      /* Optimize preview cards for single-column presentation */
+      .food-photo-card {
+        width: 100%;
+        box-sizing: border-box;
+      }
 
-  /* Fully responsive breakout layout for tablets and smartphones */
-  @media (max-width: 992px) {
-    .snacks-photo-showcase { grid-template-columns: 1fr; gap: 16px; }
-  }
-  @media (max-width: 560px) {
-    .snacks-photo-showcase { grid-template-columns: 1fr; }
-  }
-  .menu-card h3{font-size:22px; margin-bottom:8px; color:var(--ink); font-weight: 700;}
-  .menu-card p{color:var(--steel); font-size:14px; line-height:1.5; margin:0;}
-  
-  .menu-variant{
-    margin-top:16px;
-    padding-top:14px;
-    border-top:2px solid rgba(196,139,18,.3);
-    display:flex;flex-direction:column;
-    gap:8px;
-    font-size:12px;
-    color:var(--orange);
-    font-weight:600;
-  }
-  .menu-variant span{
-    display:flex;
-    align-items:center;
-    gap:6px;
-  }
-  .menu-variant em{
-    font-style:italic;
-    color:var(--gold);
-    font-family:'Playfair Display',serif;
-    font-size:13px;
-  }
-  
-  @media (max-width:900px){
-    .menu-grid{grid-template-columns:repeat(2,1fr);}
-  }
-  .kannada-quote{
-    font-family:'Playfair Display',serif;
-    font-size:18px;
-    color:var(--orange);
-    font-style:italic;
-    letter-spacing:.02em;
-    line-height:1.6;
-    max-width:680px;
-    margin:0 auto;
-    padding:24px;
-    border-left:4px solid var(--gold);
-    background:rgba(196,139,18,.08);
-    border-radius:8px;
-  }
-  .kannada-quote-author{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:12px;
-    color:var(--steel);
-    letter-spacing:.08em;
-    text-transform:uppercase;
-    margin-top:12px;
-    font-style:normal;
-  }
-
-  /* Map Section */
-  .map-container{
-    margin-top:48px;
-    border-radius:16px;
-    overflow:hidden;
-    box-shadow:0 16px 48px rgba(44,34,28,.15);
-    max-width:100%;
-  }
-  .map-link{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:linear-gradient(135deg, rgba(217,107,39,.15), rgba(196,139,18,.1));
-    border:3px solid var(--gold);
-    border-radius:16px;
-    padding:64px 32px;
-    text-decoration:none;
-    cursor:pointer;
-    transition:all .3s ease;
-    gap:20px;
-  }
-  .map-link:hover{
-    background:linear-gradient(135deg, rgba(217,107,39,.25), rgba(196,139,18,.2));
-    transform:translateY(-4px);
-    box-shadow:0 20px 50px rgba(217,107,39,.2);
-  }
-  .map-link-icon{font-size:48px;}
-  .map-link-text h3{margin:0;color:var(--ink);font-size:28px;font-weight:900;}
-  .map-link-text p{margin:8px 0 0;color:var(--steel);font-size:16px;}
-
-  /* Reviews Section */
-  .reviews-section{
-    background:var(--roast-dim);
-    padding:80px 0;
-    background-image:
-      radial-gradient(circle at 5% 30%, rgba(139,90,43,.04) 0%, transparent 30%),
-      radial-gradient(circle at 95% 70%, rgba(217,107,39,.03) 0%, transparent 35%);
-  }
-  .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px;}
-  .review-card{
-    background:var(--roast);
-    padding:32px;
-    border-radius:16px;
-    border:1px solid rgba(196,139,18,.2);
-    box-shadow:0 4px 20px rgba(44,34,28,.02);
-  }
-  .review-stars{
-    font-size:20px;margin-bottom:12px;letter-spacing:4px;
-  }
-  .review-text{
-    font-size:15px;
-    color:var(--steel);
-    line-height:1.7;
-    margin-bottom:16px;
-    font-style:italic;
-  }
-  .review-author{
-    font-family:'Playfair Display',serif;
-    font-size:16px;
-    color:var(--orange);
-    font-weight:700;
-  }
-
-  /* WhatsApp Section */
-  .whatsapp-section{
-    background:linear-gradient(135deg, rgba(37,211,102,.1), rgba(196,139,18,.08));
-    border:3px solid #25d366;
-    border-radius:24px;
-    padding:48px;
-    margin:40px auto;
-    max-width:520px;
-    text-align:center;
-    box-shadow:0 16px 48px rgba(37,211,102,.15);
-    backdrop-filter:blur(10px);
-    position:relative;
-    overflow:hidden;
-  }
-  .whatsapp-section h3{
-    font-family:'Playfair Display',serif;
-    font-size:32px;
-    color:var(--ink);
-    margin:0 0 16px;
-    font-weight:900;
-  }
-  .whatsapp-btn{
-    display:inline-flex;
-    align-items:center;
-    gap:12px;
-    background:#25d366;
-    color:white;
-    padding:16px 32px;
-    border-radius:100px;
-    text-decoration:none;
-    font-weight:700;
-    font-size:16px;
-    transition:all .3s ease;
-    margin-top:16px;
-    box-shadow:0 8px 24px rgba(37,211,102,.3);
-  }
-  .whatsapp-btn:hover{
-    background:#20ba5a;
-    transform:translateY(-3px);
-    box-shadow:0 12px 32px rgba(37,211,102,.4);
-  }
-  .whatsapp-icon{font-size:24px;}
-
-  @media (max-width:900px){
-    .reviews-grid{grid-template-columns:repeat(2,1fr);}
-  }
-  @media (max-width:600px){
-    .reviews-grid{grid-template-columns:1fr;}
-    .map-link{flex-direction:column;padding:40px 24px;}
-  }
-  /* ==========================================================================
-   MOBILE RESPONSIVENESS FIX
-   ========================================================================== */
-@media (max-width: 768px) {
-  /* Forces the 4-column item layout to stack cleanly in 1 column */
-  .snacks-photo-showcase, 
-  .snacks-showcase-grid {
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-    padding: 0 20px !important;
-  }
-
-  /* Ensures individual food cards span the full viewport width */
-  .food-photo-card, 
-  .snack-card {
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Scales down photo heights so they look proportional on small displays */
-  .image-wrapper {
-    height: 220px !important;
-  }
-
-  /* Optimizes text sizes so headers do not clip or wrap awkwardly */
-  .card-caption h3, 
-  .snack-info h3 {
-    font-size: 20px !important;
-  }
-
-  .card-caption p, 
-  .snack-info p {
-    font-size: 14px !important;
-  }
-}
-
-</style>
+      .image-wrapper {
+        height: 230px; /* Expands height for highly clear, rich mobile imagery */
+      }
+      
+      .card-caption h3 {
+        font-size: 18px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="nav">
-    <div class="nav-inner">
-      <a class="brand" href="#">
-        <img src="logo.jpeg" alt="Namma KA18 Coffee Adda logo" style="width:45px;height:45px;border-radius:50%;object-fit:cover;" onerror="this.style.display='none'"/>
-        <span class="brand-text">Namma KA18 Coffee Adda<small>Est. 1991</small></span>
-      </a>
-      <nav class="links">
-        <a href="#about">About</a>
-        <a href="#menu">Menu</a>
-        <a href="#visit">Visit</a>
-      </nav>
-      <a class="nav-cta" href="#visit">Visit us today</a>
-    </div>
+
+  <!-- Brand Title Headers -->
+  <header class="cafe-brand-header">
+    <h1 class="kannada-main-title">ನಮ್ಮ KA18 ಕಾಫಿ ಅಡ್ಡಾ</h1>
+    <p class="tagline-sub">"ಸಿಪ್ ಸಿಪ್ಪಿನಲ್ಲೂ ಮಲೆನಾಡ ಮೌನ..."</p>
   </header>
 
-  <main>
-    <!-- Elegant Header Section for your Cafe -->
-    <div class="cafe-brand-container">
-      <h1 class="kannada-main-title"><span class="title-namma">ನಮ್ಮ</span> <span class="title-ka18">KA18</span> <span class="title-kannada">ಕಾಫಿ ಅಡ್ಡಾ</span></h1>
-      <p class="subtitle-kannada">ಚಿಕ್ಕಮಗಳೂರು ಫಿಲ್ಟರ್ ಕಾಫಿ</p>
-    </div>
-
-    <section class="hero">
-      <div class="hero-bg"></div>
-      <div class="hero-tint"></div>
-      <div class="hero-content">
-        <img src="logo.jpeg" alt="Namma KA18 Coffee Adda logo" class="hero-logo" onerror="this.style.display='none'"/>
-        <div class="hero-text">
-          <h1>Fresh <em>Filter Coffee</em> with old-town warmth</h1>
-          <p class="hero-tagline">A cozy neighborhood haven in Chikkamagaluru, serving rich coffee, short eats, and conversations that feel like home.</p>
-          <div class="hero-meta"><strong>Est. 1991</strong> · Handcrafted filter coffee · Open daily</div>
-          <div class="hero-btns">
-            <a class="btn btn-primary" href="#menu">See the menu</a>
-            <a class="btn btn-ghost" href="#about">Our story</a>
-          </div>
-        </div>
+  <!-- Interactive Menu Wrapper Frame -->
+  <main class="menu-main-wrapper">
+    
+    <!-- Left Hand Component: Classic Digital Board -->
+    <section class="menu-content-board">
+      <div class="board-header">
+        <div class="brand-badge">KA18</div>
+        <h2>ಕಾಫಿ ಅಡ್ಡಾ</h2>
+        <span class="est-year">ESTD 1991</span>
       </div>
-      <div class="scroll-cue">
-        <span>Scroll</span>
-        <div class="line"></div>
-      </div>
-    </section>
-
-    <section id="about" class="wrap" style="padding-top:40px; margin-bottom:40px;">
-      <div class="about-grid">
-        <div class="about-copy">
-          <div class="eyebrow">About us</div>
-          <p class="lede">Namma KA18 Coffee Adda has been pouring comfort into every cup since 1991.</p>
-          <p>We are known for our signature Chikkamagaluru filter coffee, warm hospitality, and the kind of slow mornings that make people return.</p>
-          
-          <!-- Coffee Paragraph -->
-          <p style="font-style: italic; color: var(--steel); margin-top: 24px; line-height: 1.8; font-size: 16px;">
-            ☕ <strong>The Coffee Culture:</strong> Every cup of filter coffee is brewed with patience and passion. From the first aromatic sip at dawn to the evening's leisurely conversations, our coffee connects people, memories, and moments. It's more than a beverage—it's a ritual, a tradition, a bridge between generations.
-          </p>
-          
-          <div class="about-stats">
-            <div class="stat"><b>34+</b><span>Years of tradition</span></div>
-            <div class="stat"><b>100%</b><span>Freshly brewed</span></div>
-            <div class="stat"><b>24/7</b><span>Community vibes</span></div>
-          </div>
-        </div>
-        <div class="about-photo">
-          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80" alt="Coffee being served in a cozy cafe">
-          <div class="tag">Classic coffee house • Local favorite</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="menu-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; padding: 60px 24px; max-width: 1200px; margin: 0 auto;"
       
-      <!-- Central Digital Board Image Menu Layout -->
-      <div class="menu-content-board">
-        <div class="menu-header">
-          <div class="brand-badge">KA18</div>
-          <h2 style="font-family: Georgia, serif;">ಕಾಫಿ ಅಡ್ಡಾ</h2>
-          <span class="est-year">ESTD 1991</span>
+      <div class="menu-rows-list">
+        <div class="menu-item-row">
+          <span class="eng-name">BOOST</span>
+          <span class="kn-name">ಬೂಸ್ಟ್</span>
+          <span class="price-val">20</span>
         </div>
-        
-        <div class="menu-list">
-          <div class="menu-row">
-            <span class="eng">BOOST</span><span class="kn">ಬೂಸ್ಟ್</span><span class="price">20</span>
-          </div>
-          <div class="menu-row">
-            <span class="eng">HORLICKS</span><span class="kn">ಹಾರ್ಲಿಕ್ಸ್</span><span class="price">20</span>
-          </div>
-          <div class="menu-row">
-            <span class="eng">BADAM</span><span class="kn">ಬಾದಾಮ್ ಮಿಲ್ಕ್</span><span class="price">20</span>
-          </div>
-          <div class="menu-row">
-            <span class="eng">BLACK COFFEE</span><span class="kn">ಬ್ಲಾಕ್ ಕಾಫಿ</span><span class="price">25</span>
-          </div>
-          <div class="menu-row">
-            <span class="eng">LARGE COFFEE</span><span class="kn">ಲಾರ್ಜ್ ಕಾಫಿ</span><span class="price">25</span>
-          </div>
-          <div class="menu-row">
-            <span class="eng">JAGGERY COFFEE</span><span class="kn">ಬೆಲ್ಲದ ಕಾಫಿ</span><span class="price">20</span>
-          </div>
-          <div class="menu-row">
-            <span class="eng">LEMON TEA</span><span class="kn">ಲೇಮನ್ ಟೀ</span><span class="price">20</span>
-          </div>
-          <div class="menu-row">
-            <span class="eng">MINI COFFEE</span><span class="kn">ಮಿನಿ ಕಾಫಿ</span><span class="price">15</span>
-          </div>
-          <div class="menu-row">
-            <span class="eng">TEA</span><span class="kn">ಟೀ</span><span class="price">15</span>
-          </div>
+        <div class="menu-item-row">
+          <span class="eng-name">HORLICKS</span>
+          <span class="kn-name">ಹಾರ್ಲಿಕ್ಸ್</span>
+          <span class="price-val">20</span>
         </div>
-      </div>
-
-      <!-- Grid Showcase Layout with Real Food Photography on Right -->
-      <div class="snacks-photo-showcase" style="display: flex; flex-direction: column; gap: 24px; padding: 0;">
-
-          <!-- Card 1: Paper Cup Coffee -->
-          <div class="food-photo-card">
-            <div class="image-wrapper">
-              <img src="coffee.jpeg" alt="Filter Coffee">
-            </div>
-            <div class="card-caption">
-              <h3>ಫಿಲ್ಟರ್ ಕಾಫಿ</h3>
-            </div>
-          </div>
-
-          <!-- Card 2: Chakli / Muruku -->
-          <div class="food-photo-card">
-            <div class="image-wrapper">
-              <img src="chakuli.jpeg" alt="Muruku">
-            </div>
-            <div class="card-caption">
-              <h3>ಮುರುಕು / ಚಕ್ಲಿ</h3>
-            </div>
-          </div>
-
-          <!-- Card 3: Kodubale -->
-          <div class="food-photo-card">
-            <div class="image-wrapper">
-              <img src="kodubale.jpeg" alt="Kodubale">
-            </div>
-            <div class="card-caption">
-              <h3>ಕೊಡುಬಾಳೆ</h3>
-            </div>
-          </div>
-
-          <!-- Card 4: Biscuits -->
-          <div class="food-photo-card">
-            <div class="image-wrapper">
-              <img src="biscuits.jpeg" alt="Biscuits">
-            </div>
-            <div class="card-caption">
-              <h3>ಬಿಸ್ಕತ್ತುಗಳು</h3>
-            </div>
-          </div>
-
+        <div class="menu-item-row">
+          <span class="eng-name">BADAM MILK</span>
+          <span class="kn-name">ಬಾದಾಮ್ ಮಿಲ್ಕ್</span>
+          <span class="price-val">20</span>
+        </div>
+        <div class="menu-item-row">
+          <span class="eng-name">BLACK COFFEE</span>
+          <span class="kn-name">ಬ್ಲಾಕ್ ಕಾಫಿ</span>
+          <span class="price-val">25</span>
+        </div>
+        <div class="menu-item-row">
+          <span class="eng-name">LARGE COFFEE</span>
+          <span class="kn-name">ಲಾರ್ಜ್ ಕಾಫಿ</span>
+          <span class="price-val">25</span>
+        </div>
+        <div class="menu-item-row">
+          <span class="eng-name">JAGGERY COFFEE</span>
+          <span class="kn-name">ಬೆಲ್ಲದ ಕಾಫಿ</span>
+          <span class="price-val">20</span>
+        </div>
+        <div class="menu-item-row">
+          <span class="eng-name">LEMON TEA</span>
+          <span class="kn-name">ಲೇಮನ್ ಟೀ</span>
+          <span class="price-val">20</span>
+        </div>
+        <div class="menu-item-row">
+          <span class="eng-name">MINI COFFEE</span>
+          <span class="kn-name">ಮಿನಿ ಕಾಫಿ</span>
+          <span class="price-val">15</span>
+        </div>
+        <div class="menu-item-row">
+          <span class="eng-name">TEA</span>
+          <span class="kn-name">ಟೀ</span>
+          <span class="price-val">15</span>
         </div>
       </div>
     </section>
 
+    <!-- Right Hand Component: Grid layout that auto-collapses to sequential mobile view -->
+    <section class="snacks-photo-grid">
+      
+      <!-- Card 1: Paper Cup Coffee -->
+      <div class="food-photo-card">
+        <div class="image-wrapper">
+          <img src="coffee.jpeg" alt="Filter Coffee">
+        </div>
+        <div class="card-caption">
+          <h3>ಫಿಲ್ಟರ್ ಕಾಫಿ</h3>
+          <p>Traditional local filter coffee blend served in steaming paper cups.</p>
         </div>
       </div>
-    </section>
 
-    <!-- Open Hours Section - Centered -->
-    <section style="padding: 60px 24px; text-align: center;">
-      <div style="font-size:18px;color:var(--gold);font-family:'Playfair Display',serif;font-weight:700;letter-spacing:2px;display:flex;align-items:center;justify-content:center;gap:8px;">
-        <span>🕰️</span> Open Hours: 6:30 AM - 9:00 PM
-      </div>
-    </section>
-    <section style="padding:60px 24px;text-align:center;background:var(--roast);\">
-      <div class="wrap">
-        <div class="kannada-quote">
-          ಬರಿ ಕಾಫಿಯಷ್ಟೇ ಅಲ್ಲ, ಮನಸುಗಳನ್ನು ಬೆಸೆಯುವ ಸವಿ ನಿಲ್ದಾಣ.
-          <div class="kannada-quote-author">— Ashok</div>
+      <!-- Card 2: Chakli -->
+      <div class="food-photo-card">
+        <div class="image-wrapper">
+          <img src="chakuli.jpeg" alt="Chakli Snack">
+        </div>
+        <div class="card-caption">
+          <h3>ಚಕ್ಲಿ / ಮುರುಕು</h3>
+          <p>Crisp, crunchy golden deep-fried spirals spiced to perfection.</p>
         </div>
       </div>
-    </section>
 
-    <section id="visit" class="wrap" style="padding:90px 0 110px;">
-      <div class="section-head">
-        <div class="eyebrow">Visit</div>
-        <h2>Drop by for a cup and a warm welcome.</h2>
-        <p>Located in the heart of Chikkamagaluru, we’re ready to serve your next favorite coffee break.</p>
-      </div>      <a href="https://maps.app.goo.gl/TSJgt8FHKSGakNC77" target="_blank" class="map-link">
-        <div class="map-link-icon">📍</div>
-        <div class="map-link-text">
-          <h3>Find Us on Map</h3>
-          <p>Basavanahalli road, infront of axis bank, Chikkamagaluru</p>
+      <!-- Card 3: Kodubale -->
+      <div class="food-photo-card">
+        <div class="image-wrapper">
+          <img src="kodubale.jpeg" alt="Kodubale Snack">
         </div>
-      </a>
-    </section>
-
-    <section class="reviews-section">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="eyebrow">What people say</div>
-          <h2>Loved by our community.</h2>
-          <p>Real voices, real stories from coffee lovers who call this their second home.</p>
-        </div>
-        <div class="reviews-grid">
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <div class="review-text">"The coffee here is exceptional. It's not just the brew, it's the warmth and hospitality. I come here every morning."</div>
-            <div class="review-author">— Priya M.</div>
-          </div>
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <div class="review-text">"34 years of tradition in every cup. This place feels like home. The Kannada touch makes it even more special."</div>
-            <div class="review-author">— Raj K.</div>
-          </div>
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <div class="review-text">"Best filter coffee in Chikkamagaluru. The snacks are perfect. Ashok's passion for what he does shows in every detail."</div>
-            <div class="review-author">— Meera S.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer style="padding:40px 24px;text-align:center;">
-    <div class="insta-section">
-      <h3>Follow Us</h3>
-      <img src="insta.jpeg" alt="Follow on Instagram" class="insta-qr" onerror="this.style.display='none'"/>
-      <div class="insta-id">@nammaka18coffee</div>
-      <div class="insta-handle">Join our coffee community</div>
-    </div>
-    
-    <div class="contact-info" style="margin-top:32px;">
-      <span>📍 Chikkamagaluru, Karnataka</span>
-      <a href="tel:+919242924288">📞 +91 92429 24288</a>
-    </div>
-    
-    <div class="whatsapp-section">
-      <h3>Chat with us on WhatsApp</h3>
-      <p style="color:var(--steel);font-size:15px;margin:12px 0;">Have questions about our coffee or want to place an order?</p>
-      <a href="https://wa.me/919242924288" target="_blank" class="whatsapp-btn">
-        <span class="whatsapp-icon">💬</span>
-        Message us on WhatsApp
-      </a>
-    </div>
-    
-    <div style="margin-top:32px;padding:24px;text-align:center;">
-      <div class="kannada-quote" style="border-left:none;background:transparent;padding:0;">
-        ಮಲೆನಾಡ ಮಣ್ಣಿನ ಘಮ, ನಮ್ಮ ಕಾಫಿಯ ಸವಿಯ ಸಂಗಮ.
-        <div class="kannada-quote-author">— ಅಶೋಕ್</div>
-      </div>
-    </div>
-    
-    <div style="margin-top:24px;padding-top:24px;border-top:1px solid rgba(44,34,28,.1);font-size:13px;color:var(--steel);">
-      © 2026 Namma KA18 Coffee Adda<br>
-      <span class="byline">Lovingly crafted by Ashok</span>
-    </div>
-  </footer>
-</body>
-</html>
+        <div class="card-caption">
+          <h3>ಕೊಡುಬಾಳೆ</h3>
