@@ -336,6 +336,7 @@
   #visit .section-head{margin-bottom:34px;}
   #visit .section-head h2{font-size:clamp(24px,2.8vw,32px);overflow-wrap:anywhere;line-height:1.18;}
   #visit .section-head p{font-size:15px;max-width:620px;}
+  #visit .section-head{max-width:760px;margin-left:auto;margin-right:auto;text-align:left;}
 
   /* ---------- about ---------- */
   .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;}
@@ -595,7 +596,7 @@
     align-items:start;
     gap:24px;
     max-width:920px;
-    margin:0 auto;
+    margin:24px auto 0;
     padding:60px 24px;
   }
 
@@ -661,7 +662,7 @@
   }
 
   @media (max-width:960px){
-    .menu-container{grid-template-columns:1fr;gap:22px;padding:34px 16px;}
+    .menu-container{grid-template-columns:1fr;gap:22px;padding:34px 16px;margin:18px auto 0;}
     .menu-content-board{margin:0;padding:26px 16px;border-width:3px;}
     .menu-header h2{font-size:26px;}
     .menu-row{grid-template-columns:1.1fr .95fr auto;gap:8px;}
@@ -683,8 +684,8 @@
     .section-head h2{font-size:26px;}
     .section-head p{font-size:13px;}
     #visit .section-head{margin-bottom:20px;}
-    #visit .section-head h2{font-size:18px;line-height:1.15;}
-    #visit .section-head p{font-size:11px;line-height:1.4;}
+    #visit .section-head h2{font-size:16px;line-height:1.12;}
+    #visit .section-head p{font-size:10px;line-height:1.35;}
     .eyebrow{font-size:9px;}
     .about-copy p{font-size:13px;line-height:1.65;}
     .about-copy .lede{font-size:21px;}
@@ -704,23 +705,23 @@
     .snacks-photo-showcase::after{font-size:9px;left:8px;bottom:8px;padding:6px 10px;}
     .kannada-quote{font-size:14px;padding:16px;}
     .kannada-quote-author{font-size:10px;}
-    .map-link{padding:16px 9px;gap:6px;}
-    .map-link-text h3{font-size:14px;}
-    .map-link-text p{font-size:10px;}
+    .map-link{padding:12px 8px;gap:5px;border-radius:10px;}
+    .map-link-text h3{font-size:13px;}
+    .map-link-text p{font-size:9px;line-height:1.28;}
     .review-card{padding:20px;}
     .review-stars{font-size:16px;letter-spacing:3px;}
     .review-text{font-size:13px;line-height:1.55;}
     .review-author{font-size:14px;}
-    .insta-section{padding:18px 12px;border-radius:16px;max-width:300px;}
-    .insta-section h3{font-size:20px;}
-    .insta-id{font-size:15px;}
-    .insta-handle{font-size:13px;}
-    .insta-qr{width:118px;height:118px;border-width:5px;}
+    .insta-section{padding:12px 8px;border-radius:12px;max-width:240px;}
+    .insta-section h3{font-size:16px;margin-bottom:10px;}
+    .insta-id{font-size:12px;margin-bottom:8px;}
+    .insta-handle{font-size:10px;}
+    .insta-qr{width:92px;height:92px;border-width:4px;margin-bottom:12px;}
     .contact-info{gap:12px;font-size:12px;}
-    .whatsapp-section{padding:12px 8px;border-radius:12px;max-width:240px;}
-    .whatsapp-section h3{font-size:15px;margin-bottom:8px;}
+    .whatsapp-section{padding:10px 6px;border-radius:10px;max-width:210px;}
+    .whatsapp-section h3{font-size:13px;margin-bottom:6px;}
     .whatsapp-section p{font-size:10px !important;}
-    .whatsapp-btn{font-size:10px;padding:7px 10px;gap:6px;}
+    .whatsapp-btn{font-size:9px;padding:6px 8px;gap:5px;}
     .byline{font-size:12px;}
   }
 
@@ -807,6 +808,8 @@
     cursor:pointer;
     transition:all .3s ease;
     gap:14px;
+    max-width:760px;
+    margin:0 auto;
   }
   .map-link:hover{
     background:linear-gradient(135deg, rgba(217,107,39,.25), rgba(196,139,18,.2));
@@ -928,18 +931,23 @@
   }
 
   @media (max-width:480px){
-    #visit{padding:34px 0 42px !important;}
+    #visit{padding:24px 0 30px !important;}
     #visit .section-head{margin-bottom:14px;}
-    #visit .section-head h2{font-size:16px;line-height:1.14;}
-    #visit .section-head p{font-size:10px;line-height:1.35;margin-top:6px;}
+    #visit .section-head h2{font-size:14px;line-height:1.1;}
+    #visit .section-head p{font-size:9px;line-height:1.28;margin-top:5px;}
     #visit .wrap{padding-left:14px;padding-right:14px;}
-    .map-link{padding:12px 8px;gap:5px;border-width:2px;border-radius:10px;}
-    .map-link-icon{font-size:20px;}
-    .map-link-text h3{font-size:13px;}
-    .map-link-text p{font-size:9px;line-height:1.28;}
-    .whatsapp-section{max-width:220px;padding:10px 7px;}
-    .whatsapp-section h3{font-size:14px;}
-    .whatsapp-btn{font-size:9px;padding:6px 8px;}
+    .map-link{padding:10px 6px;gap:4px;border-width:2px;border-radius:9px;}
+    .map-link-icon{font-size:18px;}
+    .map-link-text h3{font-size:12px;}
+    .map-link-text p{font-size:8px;line-height:1.2;}
+    .insta-section{max-width:200px;padding:10px 6px;border-radius:10px;}
+    .insta-section h3{font-size:14px;}
+    .insta-id{font-size:11px;}
+    .insta-handle{font-size:9px;}
+    .insta-qr{width:82px;height:82px;border-width:3px;}
+    .whatsapp-section{max-width:180px;padding:8px 5px;}
+    .whatsapp-section h3{font-size:12px;}
+    .whatsapp-btn{font-size:8px;padding:5px 7px;}
   }
 
   @media (max-width:600px){
@@ -959,8 +967,8 @@
   }
 
   @media (max-width:400px){
-    .whatsapp-section{max-width:190px;padding:8px 6px;border-radius:10px;}
-    .whatsapp-section h3{font-size:13px;margin-bottom:6px;}
+    .whatsapp-section{max-width:160px;padding:6px 4px;border-radius:9px;}
+    .whatsapp-section h3{font-size:11px;margin-bottom:4px;}
     .whatsapp-section p{display:none;}
     .whatsapp-btn{
       width:34px;
@@ -976,6 +984,11 @@
     }
     .whatsapp-icon{font-size:15px;}
     .whatsapp-label{display:none;}
+    .insta-section{max-width:170px;padding:8px 5px;border-radius:9px;}
+    .insta-section h3{font-size:12px;margin-bottom:6px;}
+    .insta-id{font-size:10px;}
+    .insta-handle{font-size:8px;}
+    .insta-qr{width:70px;height:70px;margin-bottom:8px;}
   }
 </style>
 </head>
