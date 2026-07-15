@@ -9,6 +9,13 @@
 <!-- Updated with ultra-beautiful elegant fonts: Playfair Display & Alex Brush -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Alex+Brush&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Rozha+One&family=Yatra+One&family=Bebas+Neue&family=Noto+Sans+Kannada:wght@400;700&display=swap" rel="stylesheet">
 <style>
+  @font-face{
+    font-family:'Nudi07K';
+    src:url('nudi_07_k_bold.ttf') format('truetype');
+    font-weight:700;
+    font-style:normal;
+  }
+
   :root{
     /* Light Neutral & Vintage Color Palette Updates */
     --ink:#2c221c;
@@ -145,10 +152,21 @@
   }
   
   .hero-logo{
-    width:220px;height:220px;border-radius:50%;margin:0 auto 0;
-    border:8px solid var(--gold);
-    box-shadow:0 0 0 4px var(--orange), 0 20px 60px rgba(44,34,28,.25), inset 0 0 30px rgba(0,0,0,.1);
-    object-fit:cover;
+    width:min(360px, 82vw);
+    height:auto;
+    margin:0 auto;
+    display:block;
+    position:relative;z-index:3;
+  }
+  .hero-logo-caption{
+    margin-top:14px;
+    color:#4b3a31;
+    font-family:'Nudi07K', 'Noto Sans Kannada', sans-serif;
+    font-size:22px;
+    font-weight:700;
+    line-height:1.35;
+    letter-spacing:.01em;
+    text-shadow:0 1px 0 rgba(255,255,255,.35);
     position:relative;z-index:3;
   }
   .hero-kannada{font-size:18px;color:var(--orange);margin-bottom:10px;letter-spacing:.02em;font-weight: 500;}
@@ -1019,7 +1037,8 @@
       <div class="hero-bg"></div>
       <div class="hero-tint"></div>
       <div class="hero-content">
-        <img src="logo.jpeg" alt="Namma KA18 Coffee Adda logo" class="hero-logo" onerror="this.style.display='none'"/>
+        <img src="logo-cutout.png" alt="Namma KA18 Coffee Adda logo" class="hero-logo" onerror="this.style.display='none'"/>
+        <div class="hero-logo-caption">“ಚಿಕ್ಕಮಗಳೂರು ಫಿಲ್ಟರ್ ಕಾಫಿ”</div>
         <div class="hero-text">
           <h1>Fresh <em>Filter Coffee</em> with old-town warmth</h1>
           <p class="hero-tagline">A cozy neighborhood haven in Chikkamagaluru, serving rich coffee, short eats, and conversations that feel like home.</p>
